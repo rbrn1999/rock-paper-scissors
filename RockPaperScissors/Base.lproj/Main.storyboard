@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pwe-Pj-ojK">
+    <device id="ipad11_0rounded" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fE6-Jx-OfT">
+                                <rect key="frame" x="295" y="562" width="244" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <state key="normal" title="Start Game!"/>
+                                <connections>
+                                    <segue destination="dUp-uS-wZw" kind="push" id="SRF-xe-2ta"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fE6-Jx-OfT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cl5-di-YBk"/>
+                            <constraint firstItem="fE6-Jx-OfT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tgZ-CV-vQ2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="e7R-Y8-ogS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394.2446043165469" y="15.577889447236181"/>
+        </scene>
+        <!--One Player View Controller-->
+        <scene sceneID="wsh-g6-9aO">
+            <objects>
+                <viewController id="dUp-uS-wZw" customClass="OnePlayerViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3sG-IZ-GRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KA9-zo-Wz0">
+                                <rect key="frame" x="214.5" y="762" width="405" height="162"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ja-Gx-Z8F">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="162"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="125"/>
+                                        <state key="normal" title="✊"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="stonePressed" destination="dUp-uS-wZw" eventType="touchUpInside" id="Emk-hq-bkZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-0b-5dj" userLabel="✋">
+                                        <rect key="frame" x="135" y="0.0" width="135" height="162"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="125"/>
+                                        <state key="normal" title="✋"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="paperPressed" destination="dUp-uS-wZw" eventType="touchUpInside" id="2ty-Z6-Ghu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7E-97-xTe" userLabel="✌️">
+                                        <rect key="frame" x="270" y="0.0" width="135" height="162"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="125"/>
+                                        <state key="normal" title="✌️"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="scissorsPressed" destination="dUp-uS-wZw" eventType="touchUpInside" id="69q-5z-veE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-8L-932">
+                                <rect key="frame" x="356" y="974" width="122" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="Ready"/>
+                                <connections>
+                                    <action selector="readyPressed" destination="dUp-uS-wZw" eventType="touchUpInside" id="quB-4r-KRQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KA9-zo-Wz0" firstAttribute="centerX" secondItem="3sG-IZ-GRZ" secondAttribute="centerX" id="5bz-qm-5Aj"/>
+                            <constraint firstItem="JbL-8L-932" firstAttribute="centerX" secondItem="3sG-IZ-GRZ" secondAttribute="centerX" id="5nu-mc-Ggw"/>
+                            <constraint firstItem="EeU-nX-wet" firstAttribute="bottom" secondItem="KA9-zo-Wz0" secondAttribute="bottom" constant="250" id="Bv7-va-gMP"/>
+                            <constraint firstItem="JbL-8L-932" firstAttribute="top" secondItem="KA9-zo-Wz0" secondAttribute="bottom" constant="40" id="F1f-Uc-gEp"/>
+                            <constraint firstItem="JbL-8L-932" firstAttribute="top" secondItem="KA9-zo-Wz0" secondAttribute="bottom" constant="50" id="txb-0I-Oav"/>
+                            <constraint firstItem="KA9-zo-Wz0" firstAttribute="bottom" secondItem="EeU-nX-wet" secondAttribute="bottom" constant="-180" id="v0l-bu-SXH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EeU-nX-wet"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Bv7-va-gMP"/>
+                                <exclude reference="v0l-bu-SXH"/>
+                                <exclude reference="F1f-Uc-gEp"/>
+                                <exclude reference="txb-0I-Oav"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="v0l-bu-SXH"/>
+                                <include reference="F1f-Uc-gEp"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="Bv7-va-gMP"/>
+                                <include reference="txb-0I-Oav"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="qux-7F-hvm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ad4-ab-aj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2190.6474820143885" y="15.577889447236181"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="neb-4e-1Kp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pwe-Pj-ojK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9qd-jR-1IF">
+                        <rect key="frame" x="0.0" y="24" width="834" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eTf-hr-CI3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0f-zV-oYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="16"/>
+        </scene>
+    </scenes>
+</document>
