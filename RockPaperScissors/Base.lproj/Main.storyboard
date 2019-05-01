@@ -95,10 +95,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d3i-z4-NZ3">
-                                <rect key="frame" x="106.33333333333333" y="158" width="162.33333333333337" height="114.66666666666669"/>
+                                <rect key="frame" x="99" y="237.99999999999997" width="177" height="114.66666666666666"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nX4-s1-1w9">
-                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="28.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nX4-s1-1w9">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="28.666666666666668"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -106,8 +106,8 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lose:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-gp-wMN">
-                                        <rect key="frame" x="0.0" y="28.666666666666657" width="162.33333333333334" height="28.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lose:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-gp-wMN">
+                                        <rect key="frame" x="0.0" y="28.666666666666686" width="177" height="28.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -115,8 +115,8 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V3-UD-eH8">
-                                        <rect key="frame" x="0.0" y="57.333333333333336" width="162.33333333333334" height="28.666666666666664"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V3-UD-eH8">
+                                        <rect key="frame" x="0.0" y="57.333333333333307" width="177" height="28.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -124,8 +124,8 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longest Streak:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQo-R9-zMv">
-                                        <rect key="frame" x="0.0" y="86" width="162.33333333333334" height="28.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longest Streak:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQo-R9-zMv">
+                                        <rect key="frame" x="0.0" y="86" width="177" height="28.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -144,6 +144,7 @@
                             <constraint firstItem="EeU-nX-wet" firstAttribute="bottom" secondItem="KA9-zo-Wz0" secondAttribute="bottom" constant="250" id="Bv7-va-gMP"/>
                             <constraint firstItem="JbL-8L-932" firstAttribute="top" secondItem="KA9-zo-Wz0" secondAttribute="bottom" constant="40" id="F1f-Uc-gEp"/>
                             <constraint firstItem="d3i-z4-NZ3" firstAttribute="centerX" secondItem="3sG-IZ-GRZ" secondAttribute="centerX" id="Rks-Jg-dTH"/>
+                            <constraint firstItem="d3i-z4-NZ3" firstAttribute="top" secondItem="EeU-nX-wet" secondAttribute="top" constant="150" id="ShD-2Z-eqd"/>
                             <constraint firstItem="d3i-z4-NZ3" firstAttribute="top" secondItem="EeU-nX-wet" secondAttribute="top" constant="70" id="XGy-XN-Bpw"/>
                             <constraint firstItem="JbL-8L-932" firstAttribute="top" secondItem="KA9-zo-Wz0" secondAttribute="bottom" constant="50" id="txb-0I-Oav"/>
                             <constraint firstItem="KA9-zo-Wz0" firstAttribute="bottom" secondItem="EeU-nX-wet" secondAttribute="bottom" constant="-180" id="v0l-bu-SXH"/>
@@ -153,6 +154,7 @@
                             <mask key="constraints">
                                 <exclude reference="Bv7-va-gMP"/>
                                 <exclude reference="9D1-Q3-b3o"/>
+                                <exclude reference="ShD-2Z-eqd"/>
                                 <exclude reference="XGy-XN-Bpw"/>
                                 <exclude reference="v0l-bu-SXH"/>
                                 <exclude reference="F1f-Uc-gEp"/>
@@ -161,7 +163,8 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="9D1-Q3-b3o"/>
+                                <exclude reference="9D1-Q3-b3o"/>
+                                <include reference="ShD-2Z-eqd"/>
                                 <include reference="v0l-bu-SXH"/>
                                 <include reference="F1f-Uc-gEp"/>
                             </mask>
@@ -174,7 +177,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="qux-7F-hvm"/>
+                    <navigationItem key="navigationItem" id="qux-7F-hvm">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="6S4-PL-aAO">
+                            <connections>
+                                <action selector="resetPressed:" destination="dUp-uS-wZw" id="Xs0-RS-Wxu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="curStreakLabel" destination="5V3-UD-eH8" id="tPR-c5-jyU"/>
                         <outlet property="longestStreakLabel" destination="CQo-R9-zMv" id="IQk-bj-1U4"/>

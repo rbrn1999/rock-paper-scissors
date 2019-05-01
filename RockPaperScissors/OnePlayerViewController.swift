@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class OnePlayerViewController: UIViewController {
 
     var winCount = 0
     var loseCount = 0
     var curStreakCount = 0
-    var LongestStreak = 0
+    var longestStreak = 0
     
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var loseLabel: UILabel!
@@ -21,17 +22,57 @@ class OnePlayerViewController: UIViewController {
     @IBOutlet weak var longestStreakLabel: UILabel!
     
     override func viewDidLoad() {
+        getDate()
+        refreshLabel(nil)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     var myGame = onePlayerGame()
 
-    func refreshLabel(){
+    func refreshLabel(_ alert:UIAlertAction!){
         winLabel.text = "Win: \(winCount)"
         loseLabel.text = "Lose: \(loseCount)"
         curStreakLabel.text = "Current Streak: \(curStreakCount)"
-        longestStreakLabel.text = "Longest Streak: \(LongestStreak)"
+        longestStreakLabel.text = "Longest Streak: \(longestStreak)"
+    }
+    
+    func saveData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Player", in: context)
+        let newEntiry = NSManagedObject(entity: entity!, insertInto: context)
+        
+        newEntiry.setValue(winCount, forKey: "wins")
+        newEntiry.setValue(loseCount, forKey: "loses")
+        newEntiry.setValue(curStreakCount, forKey: "curStreak")
+        newEntiry.setValue(longestStreak, forKey: "longestStreak")
+        
+        do {
+            try context.save()
+            print("saved")
+        } catch  {
+            print("Failed saving")
+        }
+        
+    }
+    
+    func getDate() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Player")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject]
+            {
+                winCount = data.value(forKey: "wins") as! Int
+                loseCount = data.value(forKey: "loses") as! Int
+                curStreakCount = data.value(forKey: "curStreak") as! Int
+                longestStreak = data.value(forKey: "longestStreak") as! Int
+            }
+        } catch {
+            print("Failed")
+        }
+
     }
     
     @IBAction func stonePressed() {
@@ -43,6 +84,14 @@ class OnePlayerViewController: UIViewController {
     @IBAction func scissorsPressed() {
          myGame.firstPlayerInput = .scissors
     }
+    @IBAction func resetPressed(_ sender: Any) {
+        winCount = 0
+        loseCount = 0
+        curStreakCount = 0
+        longestStreak = 0
+        saveData()
+        refreshLabel(nil)
+    }
     
     @IBAction func readyPressed() {
         var statement: String
@@ -52,7 +101,7 @@ class OnePlayerViewController: UIViewController {
             statement = "You Win 😎"
             winCount += 1
             curStreakCount += 1
-            curStreakCount > LongestStreak ? LongestStreak = curStreakCount : nil
+            curStreakCount > longestStreak ? longestStreak = curStreakCount : nil
         case .lose:
             statement = "You Lose 😢"
             loseCount += 1
@@ -62,11 +111,11 @@ class OnePlayerViewController: UIViewController {
         default:
             statement = "Error: no result found"
         }
+        saveData()
         let alert = UIAlertController(title: statement, message: "CPU: \(myGame.comInput) YOU: \(myGame.firstPlayerInput)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: refreshLabel))
         self.present(alert, animated: true)
-        refreshLabel()
-        myGame = onePlayerGame() 
+        myGame = onePlayerGame()
     }
     /*
     // MARK: - Navigation
