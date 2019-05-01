@@ -10,6 +10,16 @@ import UIKit
 
 class OnePlayerViewController: UIViewController {
 
+    var winCount = 0
+    var loseCount = 0
+    var curStreakCount = 0
+    var LongestStreak = 0
+    
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var loseLabel: UILabel!
+    @IBOutlet weak var curStreakLabel: UILabel!
+    @IBOutlet weak var longestStreakLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +27,13 @@ class OnePlayerViewController: UIViewController {
     }
     var myGame = onePlayerGame()
 
+    func refreshLabel(){
+        winLabel.text = "Win: \(winCount)"
+        loseLabel.text = "Lose: \(loseCount)"
+        curStreakLabel.text = "Current Streak: \(curStreakCount)"
+        longestStreakLabel.text = "Longest Streak: \(LongestStreak)"
+    }
+    
     @IBAction func stonePressed() {
         myGame.firstPlayerInput = .rock
     }
@@ -33,8 +50,13 @@ class OnePlayerViewController: UIViewController {
         switch myGame.result {
         case .win:
             statement = "You Win 😎"
+            winCount += 1
+            curStreakCount += 1
+            curStreakCount > LongestStreak ? LongestStreak = curStreakCount : nil
         case .lose:
             statement = "You Lose 😢"
+            loseCount += 1
+            curStreakCount = 0
         case .draw:
             statement = "It's a Draw 😬"
         default:
@@ -43,6 +65,7 @@ class OnePlayerViewController: UIViewController {
         let alert = UIAlertController(title: statement, message: "CPU: \(myGame.comInput) YOU: \(myGame.firstPlayerInput)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
+        refreshLabel()
         myGame = onePlayerGame() 
     }
     /*
