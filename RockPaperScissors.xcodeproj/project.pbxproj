@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E01DFC6228F19D500DC98D6 /* TwoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E01DFC5228F19D500DC98D6 /* TwoPlayerViewController.swift */; };
 		9EAB3099227851C7004AF59E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB3098227851C7004AF59E /* AppDelegate.swift */; };
 		9EAB309B227851C7004AF59E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB309A227851C7004AF59E /* ViewController.swift */; };
 		9EAB309E227851C7004AF59E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB309C227851C7004AF59E /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E01DFC5228F19D500DC98D6 /* TwoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerViewController.swift; sourceTree = "<group>"; };
 		9EAB3095227851C7004AF59E /* RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAB3098227851C7004AF59E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EAB309A227851C7004AF59E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,10 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				9EAB3098227851C7004AF59E /* AppDelegate.swift */,
-				9EAB309A227851C7004AF59E /* ViewController.swift */,
-				9EAB309C227851C7004AF59E /* Main.storyboard */,
-				9EAB30C9227857EC004AF59E /* OnePlayerViewController.swift */,
 				9EAB30CB22785A47004AF59E /* Game.swift */,
+				9EAB309A227851C7004AF59E /* ViewController.swift */,
+				9EAB30C9227857EC004AF59E /* OnePlayerViewController.swift */,
+				9E01DFC5228F19D500DC98D6 /* TwoPlayerViewController.swift */,
+				9EAB309C227851C7004AF59E /* Main.storyboard */,
 				9EAB30A2227851C9004AF59E /* Assets.xcassets */,
 				9EAB30A4227851C9004AF59E /* LaunchScreen.storyboard */,
 				9EAB30A7227851C9004AF59E /* Info.plist */,
@@ -269,6 +272,7 @@
 				9EAB30CC22785A47004AF59E /* Game.swift in Sources */,
 				9EAB309B227851C7004AF59E /* ViewController.swift in Sources */,
 				9EAB30CA227857EC004AF59E /* OnePlayerViewController.swift in Sources */,
+				9E01DFC6228F19D500DC98D6 /* TwoPlayerViewController.swift in Sources */,
 				9EAB3099227851C7004AF59E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

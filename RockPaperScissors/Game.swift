@@ -17,22 +17,14 @@ enum results {
 
 class Game {
     var firstPlayerInput: hand
+    var secondPlayerInput: hand
     var result: results
-    init() {
-        self.firstPlayerInput = hand.none
-        self.result = results.none
-    }
-}
-
-class onePlayerGame: Game {
-    var comInput:hand
     func play() {
         let hands = [hand.rock:0, hand.paper:1, hand.scissors:2]
-        let playerOne:Int? = hands[firstPlayerInput]
-        guard let com = hands[comInput] else { return }
-
-        if let playerOne = playerOne{
-            switch playerOne - com {
+        let firstPlayer = hands[firstPlayerInput]
+        let secondPlayer = hands[secondPlayerInput]
+        if let firstPlayer = firstPlayer, let secondPlayer = secondPlayer {
+            switch secondPlayer - firstPlayer {
             case 1, -2:
                 self.result = results.win
             case -1, 2:
@@ -40,13 +32,21 @@ class onePlayerGame: Game {
             case 0:
                 self.result = results.draw
             default:
-                print("com hand input error")
+                print("input error")
+            }
             }
         }
+    init() {
+        self.firstPlayerInput = hand.none
+        self.secondPlayerInput = hand.none
+        self.result = results.none
     }
+}
+
+class onePlayerGame: Game {
     override init() {
-        let HandArr = [hand.rock, hand.paper, hand.scissors]
-        self.comInput = HandArr[Int.random(in: 0...2)]
         super.init()
+        let HandArr = [hand.rock, hand.paper, hand.scissors]
+        self.secondPlayerInput = HandArr[Int.random(in: 0...2)]
     }
 }

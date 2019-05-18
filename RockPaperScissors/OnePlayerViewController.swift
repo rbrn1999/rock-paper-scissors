@@ -20,8 +20,35 @@ class OnePlayerViewController: UIViewController {
     @IBOutlet weak var loseLabel: UILabel!
     @IBOutlet weak var curStreakLabel: UILabel!
     @IBOutlet weak var longestStreakLabel: UILabel!
+    @IBOutlet weak var readyButton: UIButton!
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .all
+        }
+    }
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .portrait
+        } else {
+            return .unknown
+        }
+    }
     
     override func viewDidLoad() {
+        readyButton.isHidden = true
         getDate()
         refreshLabel(nil)
         super.viewDidLoad()
@@ -77,12 +104,15 @@ class OnePlayerViewController: UIViewController {
     
     @IBAction func stonePressed() {
         myGame.firstPlayerInput = .rock
+        readyPressed()
     }
     @IBAction func paperPressed() {
          myGame.firstPlayerInput = .paper
+        readyPressed()
     }
     @IBAction func scissorsPressed() {
          myGame.firstPlayerInput = .scissors
+        readyPressed()
     }
     @IBAction func resetPressed(_ sender: Any) {
         winCount = 0
@@ -112,7 +142,7 @@ class OnePlayerViewController: UIViewController {
             statement = "Error: no result found"
         }
         saveData()
-        let alert = UIAlertController(title: statement, message: "CPU: \(myGame.comInput) YOU: \(myGame.firstPlayerInput)", preferredStyle: .alert)
+        let alert = UIAlertController(title: statement, message: "CPU: \(myGame.secondPlayerInput) YOU: \(myGame.firstPlayerInput)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: refreshLabel))
         self.present(alert, animated: true)
         myGame = onePlayerGame()
