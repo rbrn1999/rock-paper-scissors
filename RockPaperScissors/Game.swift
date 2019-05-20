@@ -24,7 +24,7 @@ class Game {
         let firstPlayer = hands[firstPlayerInput]
         let secondPlayer = hands[secondPlayerInput]
         if let firstPlayer = firstPlayer, let secondPlayer = secondPlayer {
-            switch secondPlayer - firstPlayer {
+            switch firstPlayer - secondPlayer {
             case 1, -2:
                 self.result = results.win
             case -1, 2:

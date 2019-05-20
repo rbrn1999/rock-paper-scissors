@@ -29,23 +29,16 @@ class OnePlayerViewController: UIViewController {
         
     }
     override var shouldAutorotate: Bool {
-        return false
+        return true
     }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
+            return .landscape
         } else {
             return .all
         }
     }
     
-    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .portrait
-        } else {
-            return .unknown
-        }
-    }
     
     override func viewDidLoad() {
         readyButton.isHidden = true
